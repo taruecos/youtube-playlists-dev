@@ -8,8 +8,8 @@
 
 ## Progression
 - Total questions prévues : **100**
-- Répondues : **5**
-- Progression : **5%**
+- Répondues : **10**
+- Progression : **10%**
 
 ---
 
@@ -62,4 +62,26 @@ Aucun. On suit le plan 12 mois et on tient.
 - Intervention humaine cible : **0h/semaine**
 - Cible : **100k€ brut/an** atteint courant année 2
 - Pas de plan d'abandon — résilience > pivot
+
+---
+
+### Catégorie 2 — Niches & positionnement
+
+**Q6-Q10 — Tous les choix de niche/positionnement**
+**Réponse unique : le ROI décide tout.**
+- Pas de préférence personnelle (rain vs forest vs fireplace etc.)
+- Pas de préférence diversification vs angles d'une niche
+- Pas de préférence audience (sleep/study/meditation)
+- Pas de préférence langue
+- Pas de préférence niche éprouvée vs émergente
+
+→ *Implication :* Atlas doit faire une étude RPM/CPM + analyse de concurrence (vues/abonnés/montée de chaînes récentes) et trancher sur base data. Décision déléguée à l'algorithme, pas à l'affect.
+→ *À produire :* matrice ROI = (CPM estimé × audience cible accessible) / (concurrence + temps avant monétisation). Top 3 sorties = les 3 chaînes.
+
+---
+
+**Contraintes ajoutées :**
+- Choix de niche **piloté par data**, pas par goût
+- Atlas doit livrer une étude comparative niche avant Cat 3 (stack)
+- Critères : RPM, CPM, taille audience cible, saturation, temps avant 1000 subs + 4000h
 
