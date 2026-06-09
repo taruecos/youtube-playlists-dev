@@ -14,6 +14,8 @@
 
 > Sync du 2026-06-09 : reprise complète de l'historique Telegram → décisions de Cat 3 / Cat 4 / Cat 5 / Cat 8 déjà prises mais pas reportées ici, intégrées ci-dessous.
 
+> **Update 2026-06-09 ~23:45 : LAUNCH NIGHT.** Niche verrouillée = **thunderstorm + heavy rain**. Go-live cible 2026-06-10 02:00. Tout le prep technique (assets sourcing, ffmpeg pipeline, healthcheck Telegram, SEO metadata) livré sous `launch-night/`. Voir `launch-night/README.md` pour le runbook complet. Stream key à fournir par Tariq à 2h ; Content ID dry-run obligatoire avant go-live.
+
 ---
 
 ## Catégories

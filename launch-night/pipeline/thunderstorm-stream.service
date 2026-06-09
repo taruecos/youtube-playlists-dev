@@ -1,0 +1,46 @@
+; thunderstorm-stream.service
+;
+; Install: /etc/systemd/system/thunderstorm-stream.service
+;
+; WSL2 NOTE: systemd is only honored inside WSL2 if /etc/wsl.conf contains:
+;     [boot]
+;     systemd=true
+; After editing wsl.conf, run `wsl --shutdown` from PowerShell to take effect.
+
+[Unit]
+Description=Thunderstorm ambient YouTube livestream (NVENC, 24/7)
+Documentation=file:///home/atlas/youtube-stream/README-setup.md
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=300
+StartLimitBurst=10
+
+[Service]
+Type=simple
+User=atlas
+Group=atlas
+EnvironmentFile=/etc/thunderstorm-stream.env
+ExecStart=/home/atlas/youtube-stream/stream-thunderstorm.sh
+
+; Restart policy — supervisor itself loops, but if it dies hard we restart.
+Restart=always
+RestartSec=10
+
+; Graceful shutdown — the script forwards SIGINT to ffmpeg and waits up to ~10s.
+KillSignal=SIGTERM
+TimeoutStopSec=30
+
+; Logging
+StandardOutput=append:/var/log/thunderstorm-stream/systemd.log
+StandardError=append:/var/log/thunderstorm-stream/systemd.log
+
+; Resource / hardening
+Nice=-5
+LimitNOFILE=65536
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=false
+PrivateTmp=false
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,15 @@
+[Unit]
+Description=Run thunderstorm livestream healthcheck every 5 minutes
+Documentation=file:///usr/local/bin/thunderstorm-healthcheck.sh
+
+[Timer]
+# First fire 2 minutes after boot, then every 5 minutes from last activation.
+OnBootSec=2min
+OnUnitActiveSec=5min
+# Catch up if the host (WSL2) was suspended — fire once on resume.
+Persistent=true
+AccuracySec=15s
+Unit=thunderstorm-healthcheck.service
+
+[Install]
+WantedBy=timers.target

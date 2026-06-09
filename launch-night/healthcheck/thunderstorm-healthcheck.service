@@ -1,0 +1,23 @@
+[Unit]
+Description=Thunderstorm YouTube livestream healthcheck (oneshot)
+Documentation=file:///etc/thunderstorm-healthcheck.env
+After=network-online.target thunderstorm-stream.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/thunderstorm-healthcheck.env
+ExecStart=/usr/local/bin/thunderstorm-healthcheck.sh
+# Don't kill the world if a single run goes long — but bound it
+TimeoutStartSec=120
+# Hardening — script only reads cfg, writes its own log + state, runs systemctl
+ProtectSystem=full
+ReadWritePaths=/var/log/thunderstorm-healthcheck /var/lib/thunderstorm-healthcheck
+NoNewPrivileges=true
+PrivateTmp=true
+# Avoid systemd treating expected exit=1 (escalated failure) as a unit failure;
+# the script itself handles alerting. Keep exit codes meaningful for journalctl.
+SuccessExitStatus=0 1
+
+[Install]
+WantedBy=multi-user.target
